@@ -42,10 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesEntity\ClienteServices.cs" />
+    <Compile Include="ServicesEntity\DetallePedidoServices.cs" />
+    <Compile Include="ServicesEntity\PedidoServices.cs" />
+    <Compile Include="ServicesEntity\ProductoServices.cs" />
+    <Compile Include="ServicesEntity\UsuarioServices.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ServicesEntity\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Dominio.Model\Dominio.Model.csproj">
       <Project>{3a7dc1ad-a1e1-4745-b751-926a93e08dfa}</Project>
