@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BdCafeteriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BdCafeteriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="ClienteId" />
@@ -25,7 +25,7 @@
           <Property Name="PedidoId" Type="int" />
           <Property Name="Cantidad" Type="int" />
           <Property Name="ProductoId" Type="int" />
-          <Property Name="ValorTotal" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ValorTotal" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Estado" Type="smallint" />
         </EntityType>
         <EntityType Name="Pedido">
@@ -33,13 +33,13 @@
             <PropertyRef Name="PedidoId" />
           </Key>
           <Property Name="PedidoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FechaHora" Type="date" />
+          <Property Name="FechaHora" Type="datetime" />
           <Property Name="NumPedido" Type="varchar" MaxLength="20" />
           <Property Name="ClienteId" Type="int" />
           <Property Name="UsuarioId" Type="int" />
-          <Property Name="Subtotal" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Impuestos" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Total" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Subtotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Impuestos" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Estado" Type="smallint" />
         </EntityType>
         <EntityType Name="Producto">
@@ -49,9 +49,19 @@
           <Property Name="ProductoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="100" />
           <Property Name="Cantidad" Type="int" />
-          <Property Name="Costo" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="ValorUnitario" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Costo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ValorUnitario" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Estado" Type="smallint" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -117,6 +127,7 @@
           <EntitySet Name="DetallePedido" EntityType="Self.DetallePedido" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__DetallePe__Pedid__403A8C7D" Association="Self.FK__DetallePe__Pedid__403A8C7D">
             <End Role="Pedido" EntitySet="Pedido" />
@@ -135,8 +146,7 @@
             <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BdCafeteriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -161,7 +171,7 @@
           <Property Name="PedidoId" Type="Int32" />
           <Property Name="Cantidad" Type="Int32" />
           <Property Name="ProductoId" Type="Int32" />
-          <Property Name="ValorTotal" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ValorTotal" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Estado" Type="Int16" />
           <NavigationProperty Name="Pedido" Relationship="Self.FK__DetallePe__Pedid__403A8C7D" FromRole="DetallePedido" ToRole="Pedido" />
           <NavigationProperty Name="Producto" Relationship="Self.FK__DetallePe__Produ__412EB0B6" FromRole="DetallePedido" ToRole="Producto" />
@@ -171,13 +181,13 @@
             <PropertyRef Name="PedidoId" />
           </Key>
           <Property Name="PedidoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FechaHora" Type="DateTime" Precision="0" />
+          <Property Name="FechaHora" Type="DateTime" Precision="3" />
           <Property Name="NumPedido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="ClienteId" Type="Int32" />
           <Property Name="UsuarioId" Type="Int32" />
-          <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Impuestos" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Impuestos" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Estado" Type="Int16" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK__Pedido__ClienteI__3C69FB99" FromRole="Pedido" ToRole="Cliente" />
           <NavigationProperty Name="DetallePedido" Relationship="Self.FK__DetallePe__Pedid__403A8C7D" FromRole="Pedido" ToRole="DetallePedido" />
@@ -190,8 +200,8 @@
           <Property Name="ProductoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Cantidad" Type="Int32" />
-          <Property Name="Costo" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ValorUnitario" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Costo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ValorUnitario" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Estado" Type="Int16" />
           <NavigationProperty Name="DetallePedido" Relationship="Self.FK__DetallePe__Produ__412EB0B6" FromRole="Producto" ToRole="DetallePedido" />
         </EntityType>
@@ -277,7 +287,18 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="BdCafeteriaModel.sysdiagrams" />
         </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -345,6 +366,17 @@
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BdCafeteriaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

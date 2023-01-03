@@ -64,6 +64,9 @@
     <Compile Include="Entities\Producto.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\sysdiagrams.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Usuario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
