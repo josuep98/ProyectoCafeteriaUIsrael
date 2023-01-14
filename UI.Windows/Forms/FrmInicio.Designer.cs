@@ -54,27 +54,27 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2,
+            this.toolStripLabel5,
             this.toolStripLabel3,
-            this.toolStripLabel4,
-            this.toolStripLabel5});
+            this.toolStripLabel4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(536, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(649, 31);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 22);
-            this.toolStripLabel1.Text = "Cliente";
+            this.toolStripLabel1.Size = new System.Drawing.Size(74, 22);
+            this.toolStripLabel1.Text = "Categoria";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(59, 22);
-            this.toolStripLabel2.Text = "Usuario";
+            this.toolStripLabel2.Size = new System.Drawing.Size(161, 22);
+            this.toolStripLabel2.Text = "Detalle Ingreso/Egreso";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // toolStripLabel3
@@ -87,15 +87,15 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(55, 22);
-            this.toolStripLabel4.Text = "Pedido";
+            this.toolStripLabel4.Size = new System.Drawing.Size(120, 28);
+            this.toolStripLabel4.Text = "Tipo Transacción";
             this.toolStripLabel4.Click += new System.EventHandler(this.toolStripLabel4_Click);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(103, 22);
-            this.toolStripLabel5.Text = "DetallePedido";
+            this.toolStripLabel5.Size = new System.Drawing.Size(109, 28);
+            this.toolStripLabel5.Text = "Ingreso/Egreso";
             this.toolStripLabel5.Click += new System.EventHandler(this.toolStripLabel5_Click);
             // 
             // BtnSalir
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 268);
+            this.ClientSize = new System.Drawing.Size(649, 268);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);

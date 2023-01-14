@@ -19,9 +19,10 @@ namespace UI.Windows.AplicationController
             try
             {
                 producto.Nombre = productoViewModel.Nombre;
-                producto.Cantidad = productoViewModel.Cantidad;
-                producto.Costo = productoViewModel.Costo;
-                producto.ValorUnitario = productoViewModel.ValorUnitario;
+                producto.Descripcion = productoViewModel.Descripcion;
+                producto.Stock = productoViewModel.Stock;
+                producto.Pvp = productoViewModel.Pvp;
+                producto.CategoriaId = productoViewModel.CategoriaId;
                 producto.Estado = productoViewModel.Estado;
                 productoServices.InsertarProducto(producto);
                 return true;

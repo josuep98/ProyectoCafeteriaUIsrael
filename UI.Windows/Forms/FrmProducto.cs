@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aplication.ServicesEntity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,9 +37,10 @@ namespace UI.Windows.Forms
         {
             productoViewModel = new ProductoViewModel();
             productoViewModel.Nombre = TxtNombre.Text;
-            productoViewModel.Cantidad = Convert.ToInt32(TxtCantidad.Text);
-            productoViewModel.Costo = Convert.ToDecimal(TxtCosto.Text);
-            productoViewModel.ValorUnitario = Convert.ToDecimal(TxtValorUnitario.Text);
+            productoViewModel.Descripcion = TxtDescripcion.Text;
+            productoViewModel.Stock = Convert.ToInt32(TxtStock.Text);
+            productoViewModel.Pvp = Convert.ToDecimal(TxtPvp.Text);
+            productoViewModel.CategoriaId = Convert.ToInt32(TxtCategoriaId.Text);
             productoViewModel.Estado = 1;
             Insertar();
         }

@@ -31,19 +31,21 @@
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtValorUnitario = new System.Windows.Forms.TextBox();
-            this.TxtCosto = new System.Windows.Forms.TextBox();
-            this.TxtCantidad = new System.Windows.Forms.TextBox();
+            this.TxtPvp = new System.Windows.Forms.TextBox();
+            this.TxtStock = new System.Windows.Forms.TextBox();
+            this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.TxtCategoriaId = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCerrar
             // 
-            this.BtnCerrar.Location = new System.Drawing.Point(272, 276);
+            this.BtnCerrar.Location = new System.Drawing.Point(268, 309);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(75, 23);
             this.BtnCerrar.TabIndex = 34;
@@ -53,7 +55,7 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(105, 276);
+            this.BtnGuardar.Location = new System.Drawing.Point(101, 309);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 33;
@@ -70,26 +72,26 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Producto";
             // 
-            // TxtValorUnitario
+            // TxtPvp
             // 
-            this.TxtValorUnitario.Location = new System.Drawing.Point(207, 205);
-            this.TxtValorUnitario.Name = "TxtValorUnitario";
-            this.TxtValorUnitario.Size = new System.Drawing.Size(222, 22);
-            this.TxtValorUnitario.TabIndex = 31;
+            this.TxtPvp.Location = new System.Drawing.Point(207, 205);
+            this.TxtPvp.Name = "TxtPvp";
+            this.TxtPvp.Size = new System.Drawing.Size(222, 22);
+            this.TxtPvp.TabIndex = 31;
             // 
-            // TxtCosto
+            // TxtStock
             // 
-            this.TxtCosto.Location = new System.Drawing.Point(207, 166);
-            this.TxtCosto.Name = "TxtCosto";
-            this.TxtCosto.Size = new System.Drawing.Size(222, 22);
-            this.TxtCosto.TabIndex = 30;
+            this.TxtStock.Location = new System.Drawing.Point(207, 166);
+            this.TxtStock.Name = "TxtStock";
+            this.TxtStock.Size = new System.Drawing.Size(222, 22);
+            this.TxtStock.TabIndex = 30;
             // 
-            // TxtCantidad
+            // TxtDescripcion
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(207, 130);
-            this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(222, 22);
-            this.TxtCantidad.TabIndex = 29;
+            this.TxtDescripcion.Location = new System.Drawing.Point(207, 130);
+            this.TxtDescripcion.Name = "TxtDescripcion";
+            this.TxtDescripcion.Size = new System.Drawing.Size(222, 22);
+            this.TxtDescripcion.TabIndex = 29;
             // 
             // TxtNombre
             // 
@@ -101,29 +103,29 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 208);
+            this.label5.Location = new System.Drawing.Point(109, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 16);
+            this.label5.Size = new System.Drawing.Size(37, 16);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Valor Unitario: ";
+            this.label5.Text = "Pvp: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(98, 169);
+            this.label4.Location = new System.Drawing.Point(99, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Costo: ";
+            this.label4.Text = "Stock: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 133);
+            this.label3.Location = new System.Drawing.Point(61, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.Size = new System.Drawing.Size(85, 16);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Cantidad: ";
+            this.label3.Text = "Descripción: ";
             // 
             // label2
             // 
@@ -134,17 +136,35 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Nombre: ";
             // 
+            // TxtCategoriaId
+            // 
+            this.TxtCategoriaId.Location = new System.Drawing.Point(207, 242);
+            this.TxtCategoriaId.Name = "TxtCategoriaId";
+            this.TxtCategoriaId.Size = new System.Drawing.Size(222, 22);
+            this.TxtCategoriaId.TabIndex = 36;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(63, 245);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 16);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "CategoriaId: ";
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 418);
+            this.Controls.Add(this.TxtCategoriaId);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TxtValorUnitario);
-            this.Controls.Add(this.TxtCosto);
-            this.Controls.Add(this.TxtCantidad);
+            this.Controls.Add(this.TxtPvp);
+            this.Controls.Add(this.TxtStock);
+            this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -162,13 +182,15 @@
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtValorUnitario;
-        private System.Windows.Forms.TextBox TxtCosto;
-        private System.Windows.Forms.TextBox TxtCantidad;
+        private System.Windows.Forms.TextBox TxtPvp;
+        private System.Windows.Forms.TextBox TxtStock;
+        private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtCategoriaId;
+        private System.Windows.Forms.Label label6;
     }
 }

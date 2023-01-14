@@ -10,9 +10,10 @@ namespace UI.Windows.ViewModel
     {
         public int ProductoId { get; set; }
         public string Nombre { get; set; }
-        public Nullable<int> Cantidad { get; set; }
-        public Nullable<decimal> Costo { get; set; }
-        public Nullable<decimal> ValorUnitario { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<int> Stock { get; set; }
+        public Nullable<decimal> Pvp { get; set; }
+        public Nullable<int> CategoriaId { get; set; }
         public Nullable<short> Estado { get; set; }
     }
 }

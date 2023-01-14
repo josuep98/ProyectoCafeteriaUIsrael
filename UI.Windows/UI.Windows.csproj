@@ -56,22 +56,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AplicationController\ClienteController.cs" />
-    <Compile Include="AplicationController\DetallePedidoController.cs" />
-    <Compile Include="AplicationController\PedidoController.cs" />
+    <Compile Include="AplicationController\CategoriaController.cs" />
+    <Compile Include="AplicationController\DetalleIngresoController.cs" />
+    <Compile Include="AplicationController\IngresoEgresoController.cs" />
     <Compile Include="AplicationController\ProductoController.cs" />
-    <Compile Include="AplicationController\UsuarioController.cs" />
-    <Compile Include="Forms\FrmCliente.cs">
+    <Compile Include="AplicationController\TipoTransaccionController.cs" />
+    <Compile Include="Forms\FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmCliente.Designer.cs">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
+    <Compile Include="Forms\FrmCategoria.Designer.cs">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmDetallePedido.cs">
+    <Compile Include="Forms\FrmDetalleIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmDetallePedido.Designer.cs">
-      <DependentUpon>FrmDetallePedido.cs</DependentUpon>
+    <Compile Include="Forms\FrmDetalleIngreso.Designer.cs">
+      <DependentUpon>FrmDetalleIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmInicio.cs">
       <SubType>Form</SubType>
@@ -79,11 +79,11 @@
     <Compile Include="Forms\FrmInicio.Designer.cs">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmPedido.cs">
+    <Compile Include="Forms\FrmIngresoEgreso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmPedido.Designer.cs">
-      <DependentUpon>FrmPedido.cs</DependentUpon>
+    <Compile Include="Forms\FrmIngresoEgreso.Designer.cs">
+      <DependentUpon>FrmIngresoEgreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmProducto.cs">
       <SubType>Form</SubType>
@@ -91,36 +91,36 @@
     <Compile Include="Forms\FrmProducto.Designer.cs">
       <DependentUpon>FrmProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmUsuario.cs">
+    <Compile Include="Forms\FrmTipoTransaccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmUsuario.Designer.cs">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <Compile Include="Forms\FrmTipoTransaccion.Designer.cs">
+      <DependentUpon>FrmTipoTransaccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\ClienteViewModel.cs" />
-    <Compile Include="ViewModel\DetallePedidoViewModel.cs" />
-    <Compile Include="ViewModel\PedidoViewModel.cs" />
+    <Compile Include="ViewModel\CategoriaViewModel.cs" />
+    <Compile Include="ViewModel\DetalleIngresoViewModel.cs" />
+    <Compile Include="ViewModel\IngresoEgresoViewModel.cs" />
     <Compile Include="ViewModel\ProductoViewModel.cs" />
-    <Compile Include="ViewModel\UsuarioViewModel.cs" />
-    <EmbeddedResource Include="Forms\FrmCliente.resx">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
+    <Compile Include="ViewModel\TipoTransaccionViewModel.cs" />
+    <EmbeddedResource Include="Forms\FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmDetallePedido.resx">
-      <DependentUpon>FrmDetallePedido.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmDetalleIngreso.resx">
+      <DependentUpon>FrmDetalleIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmPedido.resx">
-      <DependentUpon>FrmPedido.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmIngresoEgreso.resx">
+      <DependentUpon>FrmIngresoEgreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmUsuario.resx">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmTipoTransaccion.resx">
+      <DependentUpon>FrmTipoTransaccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

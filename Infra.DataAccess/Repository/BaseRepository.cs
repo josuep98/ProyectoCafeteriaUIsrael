@@ -15,7 +15,7 @@ namespace Infra.DataAccess.Repository
             try
             {
                 //Nombre BD
-                using (var context = new BdCafeteriaEntities())//Crea una variable en memoria y luego la elimina para que no se queden hilos de comunicación con BD
+                using (var context = new BdCafeteriaEntities1())//Crea una variable en memoria y luego la elimina para que no se queden hilos de comunicación con BD
                 {
                     context.Set<TEntity>().Add(entity);
                     context.SaveChanges();
@@ -32,7 +32,7 @@ namespace Infra.DataAccess.Repository
             try
             {
                 //Nombre BD
-                using (var context = new BdCafeteriaEntities())//Crea una variable en memoria y luego la elimina para que no se queden hilos de comunicación con BD
+                using (var context = new BdCafeteriaEntities1())//Crea una variable en memoria y luego la elimina para que no se queden hilos de comunicación con BD
                 {
                     context.Entry(entity).State = EntityState.Modified;
                     context.SaveChanges();
@@ -48,7 +48,7 @@ namespace Infra.DataAccess.Repository
         {
             try
             {
-                using (var context = new BdCafeteriaEntities())
+                using (var context = new BdCafeteriaEntities1())
                 {
                     var entity = context.Set<TEntity>().Find(Id);
                     context.Set<TEntity>().Remove(entity);
@@ -65,7 +65,7 @@ namespace Infra.DataAccess.Repository
         {
             try
             {
-                using (var context = new BdCafeteriaEntities())
+                using (var context = new BdCafeteriaEntities1())
                 {
                     return context.Set<TEntity>().ToList();
                 }
@@ -80,7 +80,7 @@ namespace Infra.DataAccess.Repository
         {
             try
             {
-                using (var context = new BdCafeteriaEntities())
+                using (var context = new BdCafeteriaEntities1())
                 {
                     return context.Set<TEntity>().Find(Id);
                 }

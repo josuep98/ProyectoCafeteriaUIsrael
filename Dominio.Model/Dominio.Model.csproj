@@ -42,33 +42,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstractions\IBaseRepository.cs" />
-    <Compile Include="Abstractions\IClienteRepository.cs" />
-    <Compile Include="Abstractions\IDetallePedidoRepository.cs" />
-    <Compile Include="Abstractions\IPedidoRepository.cs" />
+    <Compile Include="Abstractions\ICategoriaRepository.cs" />
+    <Compile Include="Abstractions\IDetalleIngresoRepository.cs" />
+    <Compile Include="Abstractions\IIngresoEgresoRepository.cs" />
     <Compile Include="Abstractions\IProductoRepository.cs" />
-    <Compile Include="Abstractions\IUsuarioRepository.cs" />
-    <Compile Include="Entities\Cliente.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Abstractions\ITipoTransaccionRepository.cs" />
+    <Compile Include="Entities\Categoria.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\DetallePedido.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Entities\DetalleiIngreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Model.cs">
+    <Compile Include="Entities\IngresoEgreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Pedido.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Producto.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Usuario.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Entities\TipoTransaccion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,9 +73,9 @@
     <Folder Include="ObjectValues\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entities\Model.tt">
+    <Content Include="Entities\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -12,24 +12,19 @@ namespace Dominio.Model.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class TipoTransaccion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Producto()
+        public TipoTransaccion()
         {
-            this.DetalleiIngreso = new HashSet<DetalleiIngreso>();
+            this.IngresoEgreso = new HashSet<IngresoEgreso>();
         }
     
-        public int ProductoId { get; set; }
-        public string Nombre { get; set; }
+        public int TipoTransaccionId { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<int> Stock { get; set; }
-        public Nullable<decimal> Pvp { get; set; }
-        public Nullable<int> CategoriaId { get; set; }
         public Nullable<short> Estado { get; set; }
     
-        public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleiIngreso> DetalleiIngreso { get; set; }
+        public virtual ICollection<IngresoEgreso> IngresoEgreso { get; set; }
     }
 }

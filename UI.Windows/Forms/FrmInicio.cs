@@ -19,32 +19,32 @@ namespace UI.Windows.Forms
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            FrmCliente frmCliente = new FrmCliente();
-            frmCliente.Show();
+            FrmCategoria frmCategoria = new FrmCategoria();
+            frmCategoria.Show();
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            FrmUsuario frmUsuario = new FrmUsuario();
-            frmUsuario.Show();
+            FrmTipoTransaccion frmtipoTransaccion = new FrmTipoTransaccion();
+            frmtipoTransaccion.Show();
         }
 
         private void toolStripLabel3_Click(object sender, EventArgs e)
         {
-            FrmProducto frmProducto= new FrmProducto(); 
+            FrmProducto frmProducto = new FrmProducto();
             frmProducto.Show();
         }
 
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
-            FrmPedido frmPedido = new FrmPedido();
-            frmPedido.Show();
+            FrmIngresoEgreso frmIngresoEgreso = new FrmIngresoEgreso();
+            frmIngresoEgreso.Show();
         }
 
         private void toolStripLabel5_Click(object sender, EventArgs e)
         {
-            FrmDetallePedido frmDetallePedido = new FrmDetallePedido();
-            frmDetallePedido.Show();
+            FrmDetalleIngreso frmDetalleIngreso = new FrmDetalleIngreso();
+            frmDetalleIngreso.Show();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
