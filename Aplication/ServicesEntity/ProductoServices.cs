@@ -17,10 +17,10 @@ namespace Aplication.ServicesEntity
             _productoRepository = new ProductoRepository();
         }
 
-        public IEnumerable<Producto> GetProductos()
-        {
-            return _productoRepository.GetAll();
-        }
+        //public IEnumerable<Producto> GetProductos()
+        //{
+        //    return _productoRepository.GetAll();
+        //}
 
         public void InsertarProducto(Producto producto)
         {
@@ -35,6 +35,10 @@ namespace Aplication.ServicesEntity
         public void EliminarProducto(int Id)
         {
             _productoRepository.Delete(Id);
+        }
+        public IEnumerable<Producto> ListarProductoActivo()
+        {
+            return _productoRepository.GetAll();
         }
     }
 }

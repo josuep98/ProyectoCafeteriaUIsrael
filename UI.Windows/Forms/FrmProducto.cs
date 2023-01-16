@@ -28,9 +28,15 @@ namespace UI.Windows.Forms
             if (productoController.InsertarProducto(productoViewModel))
             {
                 MessageBox.Show("Producto insertado correctamente!");
+                ListarProductoActivo();
             }
             else
                 MessageBox.Show("ERROR! No se pudo insertar el producto");
+        }
+
+        private void ListarProductoActivo()
+        {
+            DgvProducto.DataSource = productoController.ListarProductoActivo();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -48,6 +54,11 @@ namespace UI.Windows.Forms
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmProducto_Load(object sender, EventArgs e)
+        {
+            ListarProductoActivo();
         }
     }
 }

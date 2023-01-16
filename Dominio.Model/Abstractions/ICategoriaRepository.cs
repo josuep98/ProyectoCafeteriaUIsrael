@@ -10,5 +10,6 @@ namespace Dominio.Model.Abstractions
     public interface ICategoriaRepository : IBaseRepository<Categoria>
     {
         Categoria Buscar(string Ci);
+        IEnumerable<Categoria> ListarCategoriasActivas();
     }
 }

@@ -30,5 +30,26 @@ namespace UI.Windows.AplicationController
                 return false;
             }
         }
+
+        public IEnumerable<IngresoEgresoViewModel> ListarIngresoEgresoActivo()
+        {
+            //Obtener información de la BD
+            var listaIngresoEgreso = ingresoEgresoServices.ListarIngresoEgresoActivo();
+            //Crear objeto de entidades de vista
+            List<IngresoEgresoViewModel> listaIngresoEgresoVM = new List<IngresoEgresoViewModel>();
+            //Mapear datos de entidad
+            foreach (var item in listaIngresoEgreso)
+            {
+                listaIngresoEgresoVM.Add(new IngresoEgresoViewModel
+                {
+                    IngresoEgresoId = item.IngresoEgresoId,
+                    FechaHora = item.FechaHora,
+                    Descripcion = item.Descripcion,
+                    TipoTransaccionId = item.TipoTransaccionId,
+                    Estado = item.Estado
+                });
+            }
+            return listaIngresoEgresoVM;
+        }
     }
 }

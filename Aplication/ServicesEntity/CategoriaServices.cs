@@ -36,5 +36,9 @@ namespace Aplication.ServicesEntity
         {
             _categoriaRepository.Delete(Id);
         }
+        public IEnumerable<Categoria> ListarCategoriasActivas()
+        {
+            return _categoriaRepository.ListarCategoriasActivas();
+        }
     }
 }

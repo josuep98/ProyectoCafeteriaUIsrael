@@ -14,5 +14,24 @@ namespace Infra.DataAccess.Repository
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Categoria> ListarCategoriasActivas()
+        {
+            try
+            {
+                using (var context = new BdCafeteriaEntities1())
+                {
+                    var resultado = (from Categoria in context.Categoria
+                                     where Categoria.Estado == 1
+                                     select Categoria).ToList();
+                    return resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se pudo listar los datos" + ex.Message);
+            }
+        }
+
     }
 }

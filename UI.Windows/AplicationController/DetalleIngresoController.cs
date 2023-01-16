@@ -32,5 +32,29 @@ namespace UI.Windows.AplicationController
                 return false;
             }
         }
+
+        public IEnumerable<DetalleIngresoViewModel> ListarDetalleIngresoEgresoActivo()
+        {
+            //Obtener información de la BD
+            var listaDetalleiIngresos = detalleIngresoServices.ListarDetalleiIngresoActivo();
+            //Crear objeto de entidades de vista
+            List<DetalleIngresoViewModel> listaDetalleIngresoVM = new List<DetalleIngresoViewModel>();
+            //Mapear datos de entidad
+            foreach (var item in listaDetalleiIngresos)
+            {
+                listaDetalleIngresoVM.Add(new DetalleIngresoViewModel
+                {
+                    DetalleIngresoId = item.DetalleIngresoId,
+                    Cantidad = item.Cantidad,
+                    PrecioUnitario = item.PrecioUnitario,
+                    PrecioFinal = item.PrecioFinal,
+                    IngresoEgresoId = item.IngresoEgresoId,
+                    ProductoId = item.ProductoId,
+                    Descripcion = item.Descripcion,
+                    Estado = item.Estado
+                });
+            }
+            return listaDetalleIngresoVM;
+        }
     }
 }

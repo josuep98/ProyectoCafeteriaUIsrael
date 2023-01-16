@@ -28,9 +28,15 @@ namespace UI.Windows.Forms
             if (detalleIngresoController.InsertarDetalleIngreso(detalleIngresoViewModel))
             {
                 MessageBox.Show("Detalle del ingreso/egreso insertado correctamente!");
+                ListarDetalleIngresoEgresoActivo();
             }
             else
                 MessageBox.Show("ERROR! No se pudo insertar el detalle del ingreso/egreso");
+        }
+
+        private void ListarDetalleIngresoEgresoActivo()
+        {
+            DgvDetalleIngresoEgreso.DataSource = detalleIngresoController.ListarDetalleIngresoEgresoActivo();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -49,6 +55,11 @@ namespace UI.Windows.Forms
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmDetalleIngreso_Load(object sender, EventArgs e)
+        {
+            ListarDetalleIngresoEgresoActivo();
         }
     }
 }

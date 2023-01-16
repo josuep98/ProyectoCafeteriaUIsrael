@@ -33,12 +33,14 @@
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnRegresar = new System.Windows.Forms.Button();
+            this.DgvCategoria = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 20);
+            this.label1.Location = new System.Drawing.Point(251, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 0;
@@ -63,7 +65,7 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(96, 149);
+            this.BtnGuardar.Location = new System.Drawing.Point(441, 73);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 11;
@@ -73,7 +75,7 @@
             // 
             // BtnRegresar
             // 
-            this.BtnRegresar.Location = new System.Drawing.Point(188, 149);
+            this.BtnRegresar.Location = new System.Drawing.Point(441, 107);
             this.BtnRegresar.Name = "BtnRegresar";
             this.BtnRegresar.Size = new System.Drawing.Size(75, 23);
             this.BtnRegresar.TabIndex = 12;
@@ -81,11 +83,22 @@
             this.BtnRegresar.UseVisualStyleBackColor = true;
             this.BtnRegresar.Click += new System.EventHandler(this.BtnRegresar_Click);
             // 
+            // DgvCategoria
+            // 
+            this.DgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCategoria.Location = new System.Drawing.Point(35, 183);
+            this.DgvCategoria.Name = "DgvCategoria";
+            this.DgvCategoria.RowHeadersWidth = 51;
+            this.DgvCategoria.RowTemplate.Height = 24;
+            this.DgvCategoria.Size = new System.Drawing.Size(481, 150);
+            this.DgvCategoria.TabIndex = 13;
+            // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 247);
+            this.ClientSize = new System.Drawing.Size(566, 398);
+            this.Controls.Add(this.DgvCategoria);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtDescripcion);
@@ -93,6 +106,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCategoria";
             this.Text = ".: Categoria :.";
+            this.Load += new System.EventHandler(this.FrmCategoria_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +120,6 @@
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnRegresar;
+        private System.Windows.Forms.DataGridView DgvCategoria;
     }
 }

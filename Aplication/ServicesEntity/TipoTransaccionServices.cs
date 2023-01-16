@@ -36,5 +36,10 @@ namespace Aplication.ServicesEntity
         {
             _tipoTransaccionRepository.Delete(Id);
         }
+
+        public IEnumerable<TipoTransaccion> ListarTipoTransaccionActiva()
+        {
+            return _tipoTransaccionRepository.ListarTipoTransaccionActiva();
+        }
     }
 }

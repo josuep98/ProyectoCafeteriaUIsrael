@@ -28,5 +28,24 @@ namespace UI.Windows.AplicationController
                 return false;
             }
         }
+
+        public IEnumerable<TipoTransaccionViewModel> ListarIngresoEgresoActivo()
+        {
+            //Obtener información de la BD
+            var listaTipoTransaccion = tipoTransaccionServices.ListarTipoTransaccionActiva();
+            //Crear objeto de entidades de vista
+            List<TipoTransaccionViewModel> listaTipoTransaccionVM = new List<TipoTransaccionViewModel>();
+            //Mapear datos de entidad
+            foreach (var item in listaTipoTransaccion)
+            {
+                listaTipoTransaccionVM.Add(new TipoTransaccionViewModel
+                {
+                    TipoTransaccionId = item.TipoTransaccionId,
+                    Descripcion = item.Descripcion,
+                    Estado = item.Estado
+                });
+            }
+            return listaTipoTransaccionVM;
+        }
     }
 }

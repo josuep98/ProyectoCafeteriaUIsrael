@@ -41,11 +41,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtCategoriaId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.DgvProducto = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCerrar
             // 
-            this.BtnCerrar.Location = new System.Drawing.Point(268, 309);
+            this.BtnCerrar.Location = new System.Drawing.Point(696, 94);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(75, 23);
             this.BtnCerrar.TabIndex = 34;
@@ -55,7 +57,7 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(101, 309);
+            this.BtnGuardar.Location = new System.Drawing.Point(529, 94);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 33;
@@ -66,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 28);
+            this.label1.Location = new System.Drawing.Point(379, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 32;
@@ -76,28 +78,28 @@
             // 
             this.TxtPvp.Location = new System.Drawing.Point(207, 205);
             this.TxtPvp.Name = "TxtPvp";
-            this.TxtPvp.Size = new System.Drawing.Size(222, 22);
+            this.TxtPvp.Size = new System.Drawing.Size(273, 22);
             this.TxtPvp.TabIndex = 31;
             // 
             // TxtStock
             // 
             this.TxtStock.Location = new System.Drawing.Point(207, 166);
             this.TxtStock.Name = "TxtStock";
-            this.TxtStock.Size = new System.Drawing.Size(222, 22);
+            this.TxtStock.Size = new System.Drawing.Size(273, 22);
             this.TxtStock.TabIndex = 30;
             // 
             // TxtDescripcion
             // 
             this.TxtDescripcion.Location = new System.Drawing.Point(207, 130);
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(222, 22);
+            this.TxtDescripcion.Size = new System.Drawing.Size(273, 22);
             this.TxtDescripcion.TabIndex = 29;
             // 
             // TxtNombre
             // 
             this.TxtNombre.Location = new System.Drawing.Point(207, 91);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(222, 22);
+            this.TxtNombre.Size = new System.Drawing.Size(273, 22);
             this.TxtNombre.TabIndex = 28;
             // 
             // label5
@@ -140,7 +142,7 @@
             // 
             this.TxtCategoriaId.Location = new System.Drawing.Point(207, 242);
             this.TxtCategoriaId.Name = "TxtCategoriaId";
-            this.TxtCategoriaId.Size = new System.Drawing.Size(222, 22);
+            this.TxtCategoriaId.Size = new System.Drawing.Size(273, 22);
             this.TxtCategoriaId.TabIndex = 36;
             // 
             // label6
@@ -152,11 +154,22 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "CategoriaId: ";
             // 
+            // DgvProducto
+            // 
+            this.DgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvProducto.Location = new System.Drawing.Point(64, 289);
+            this.DgvProducto.Name = "DgvProducto";
+            this.DgvProducto.RowHeadersWidth = 51;
+            this.DgvProducto.RowTemplate.Height = 24;
+            this.DgvProducto.Size = new System.Drawing.Size(707, 207);
+            this.DgvProducto.TabIndex = 37;
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 418);
+            this.ClientSize = new System.Drawing.Size(820, 523);
+            this.Controls.Add(this.DgvProducto);
             this.Controls.Add(this.TxtCategoriaId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.BtnCerrar);
@@ -172,6 +185,8 @@
             this.Controls.Add(this.label2);
             this.Name = "FrmProducto";
             this.Text = ".: Producto :.";
+            this.Load += new System.EventHandler(this.FrmProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +207,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtCategoriaId;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView DgvProducto;
     }
 }

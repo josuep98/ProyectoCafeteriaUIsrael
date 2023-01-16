@@ -28,9 +28,15 @@ namespace UI.Windows.Forms
             if (categoriaController.InsertarCategoria(categoriaViewModel))
             {
                 MessageBox.Show("Categoria insertada correctamente!");
+                ListarCategoriasActivas();
             }
             else
                 MessageBox.Show("ERROR! No se pudo insertar la categoria");
+        }
+
+        private void ListarCategoriasActivas()
+        {
+            DgvCategoria.DataSource = categoriaController.ListarCategoriasActivas();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -44,6 +50,11 @@ namespace UI.Windows.Forms
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmCategoria_Load(object sender, EventArgs e)
+        {
+            ListarCategoriasActivas();
         }
     }
 }

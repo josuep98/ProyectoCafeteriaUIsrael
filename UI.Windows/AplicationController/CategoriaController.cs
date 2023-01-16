@@ -28,5 +28,25 @@ namespace UI.Windows.AplicationController
                 return false;
             }
         }
+
+        public IEnumerable<CategoriaViewModel> ListarCategoriasActivas()
+        {
+            //Obtener información de la BD
+            var listaCategorias = categoriaServices.ListarCategoriasActivas();
+            //Crear objeto de entidades de vista
+            List<CategoriaViewModel> listaCategoriasVM = new List<CategoriaViewModel>();
+            //Mapear datos de entidad
+            foreach (var item in listaCategorias)
+            {
+                listaCategoriasVM.Add(new CategoriaViewModel
+                {
+                    CategoriaId = item.CategoriaId,
+                    Descripcion = item.Descripcion,
+                    Estado = item.Estado
+                });
+            }
+            return listaCategoriasVM;
+        }
+
     }
 }

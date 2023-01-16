@@ -37,11 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DtpFechaHora = new System.Windows.Forms.DateTimePicker();
+            this.DgvIngresoEgreso = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvIngresoEgreso)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnRegresar
             // 
-            this.BtnRegresar.Location = new System.Drawing.Point(246, 219);
+            this.BtnRegresar.Location = new System.Drawing.Point(508, 120);
             this.BtnRegresar.Name = "BtnRegresar";
             this.BtnRegresar.Size = new System.Drawing.Size(75, 23);
             this.BtnRegresar.TabIndex = 25;
@@ -51,7 +53,7 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(137, 219);
+            this.BtnGuardar.Location = new System.Drawing.Point(508, 89);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 24;
@@ -116,11 +118,22 @@
             this.DtpFechaHora.Size = new System.Drawing.Size(200, 22);
             this.DtpFechaHora.TabIndex = 26;
             // 
+            // DgvIngresoEgreso
+            // 
+            this.DgvIngresoEgreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvIngresoEgreso.Location = new System.Drawing.Point(51, 210);
+            this.DgvIngresoEgreso.Name = "DgvIngresoEgreso";
+            this.DgvIngresoEgreso.RowHeadersWidth = 51;
+            this.DgvIngresoEgreso.RowTemplate.Height = 24;
+            this.DgvIngresoEgreso.Size = new System.Drawing.Size(532, 150);
+            this.DgvIngresoEgreso.TabIndex = 27;
+            // 
             // FrmIngresoEgreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 308);
+            this.ClientSize = new System.Drawing.Size(639, 406);
+            this.Controls.Add(this.DgvIngresoEgreso);
             this.Controls.Add(this.DtpFechaHora);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.BtnGuardar);
@@ -132,6 +145,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmIngresoEgreso";
             this.Text = ".: Ingreso/Egreso :.";
+            this.Load += new System.EventHandler(this.FrmIngresoEgreso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvIngresoEgreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +163,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DtpFechaHora;
+        private System.Windows.Forms.DataGridView DgvIngresoEgreso;
     }
 }

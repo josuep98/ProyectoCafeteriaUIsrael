@@ -32,5 +32,29 @@ namespace UI.Windows.AplicationController
                 return false;
             }
         }
+
+        public IEnumerable<ProductoViewModel> ListarProductoActivo()
+        {
+            //Obtener información de la BD
+            var listaProducto = productoServices.ListarProductoActivo();
+            //Crear objeto de entidades de vista
+            List<ProductoViewModel> listaProductoVM = new List<ProductoViewModel>();
+            //Mapear datos de entidad
+            foreach (var item in listaProducto)
+            {
+                listaProductoVM.Add(new ProductoViewModel
+                {
+                    ProductoId = item.ProductoId,
+                    Nombre = item.Nombre,
+                    Descripcion = item.Descripcion,
+                    Stock = item.Stock,
+                    Pvp = item.Pvp,
+                    CategoriaId = item.CategoriaId,
+                    Estado = item.Estado
+                });
+            }
+            return listaProductoVM;
+        }
+
     }
 }

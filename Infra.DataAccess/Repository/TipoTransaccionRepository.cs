@@ -14,5 +14,24 @@ namespace Infra.DataAccess.Repository
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<TipoTransaccion> ListarTipoTransaccionActiva()
+        {
+            try
+            {
+                using (var context = new BdCafeteriaEntities1())
+                {
+                    var resultado = (from TipoTransaccion in context.TipoTransaccion
+                                     where TipoTransaccion.Estado == 1
+                                     select TipoTransaccion).ToList();
+                    return resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se pudo listar los datos" + ex.Message);
+            }
+        }
+
     }
 }

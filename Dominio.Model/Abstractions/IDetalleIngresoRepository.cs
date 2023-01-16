@@ -10,5 +10,7 @@ namespace Dominio.Model.Abstractions
     public interface IDetalleIngresoRepository : IBaseRepository<DetalleiIngreso>
     {
         DetalleiIngreso Buscar(int id);
+
+        IEnumerable<DetalleiIngreso> ListarDetalleiIngresoActivo();
     }
 }

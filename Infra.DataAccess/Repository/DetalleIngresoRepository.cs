@@ -14,5 +14,24 @@ namespace Infra.DataAccess.Repository
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<DetalleiIngreso> ListarDetalleiIngresoActivo()
+        {
+            try
+            {
+                using (var context = new BdCafeteriaEntities1())
+                {
+                    var resultado = (from DetalleIngreso in context.DetalleiIngreso
+                                     where DetalleIngreso.Estado == 1
+                                     select DetalleIngreso).ToList();
+                    return resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se pudo listar los datos" + ex.Message);
+            }
+        }
+
     }
 }

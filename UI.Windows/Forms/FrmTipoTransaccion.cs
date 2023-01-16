@@ -28,10 +28,17 @@ namespace UI.Windows.Forms
             if (tipoTransaccionController.InsertarTipoTransaccion(tipoTransaccionViewModel))
             {
                 MessageBox.Show("Tipo de transacción insertada correctamente!");
+                ListarIngresoEgresoActivo();
             }
             else
                 MessageBox.Show("ERROR! No se pudo insertar el tipo de transacción");
         }
+
+        private void ListarIngresoEgresoActivo()
+        {
+            DgvTipoTransaccion.DataSource = tipoTransaccionController.ListarIngresoEgresoActivo();
+        }
+
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -46,49 +53,10 @@ namespace UI.Windows.Forms
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void FrmTipoTransaccion_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void TxtRol_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtNombres_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtNombreUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            ListarIngresoEgresoActivo();
         }
     }
 }

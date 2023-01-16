@@ -10,5 +10,6 @@ namespace Dominio.Model.Abstractions
     public interface IProductoRepository : IBaseRepository<Producto>
     {
         Producto Buscar(int Id);
+        IEnumerable<Producto> ListarProductoActivo();
     }
 }

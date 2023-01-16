@@ -36,5 +36,10 @@ namespace Aplication.ServicesEntity
         {
             _ingresoEgresoRepository.Delete(Id);
         }
+
+        public IEnumerable<IngresoEgreso> ListarIngresoEgresoActivo()
+        {
+            return _ingresoEgresoRepository.ListarIngresoEgresoActivo();
+        }
     }
 }

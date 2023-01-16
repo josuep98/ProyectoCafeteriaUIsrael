@@ -43,11 +43,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TxtIngresoEgresoId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.DgvDetalleIngresoEgreso = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDetalleIngresoEgreso)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCerrar
             // 
-            this.BtnCerrar.Location = new System.Drawing.Point(274, 353);
+            this.BtnCerrar.Location = new System.Drawing.Point(649, 103);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(75, 23);
             this.BtnCerrar.TabIndex = 45;
@@ -57,7 +59,7 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(107, 353);
+            this.BtnGuardar.Location = new System.Drawing.Point(526, 103);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 44;
@@ -78,28 +80,28 @@
             // 
             this.TxtDescripcion.Location = new System.Drawing.Point(206, 224);
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(222, 22);
+            this.TxtDescripcion.Size = new System.Drawing.Size(285, 22);
             this.TxtDescripcion.TabIndex = 42;
             // 
             // TxtPrecioFinal
             // 
             this.TxtPrecioFinal.Location = new System.Drawing.Point(206, 185);
             this.TxtPrecioFinal.Name = "TxtPrecioFinal";
-            this.TxtPrecioFinal.Size = new System.Drawing.Size(222, 22);
+            this.TxtPrecioFinal.Size = new System.Drawing.Size(285, 22);
             this.TxtPrecioFinal.TabIndex = 41;
             // 
             // TxtCantidad
             // 
             this.TxtCantidad.Location = new System.Drawing.Point(206, 100);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(222, 22);
+            this.TxtCantidad.Size = new System.Drawing.Size(285, 22);
             this.TxtCantidad.TabIndex = 40;
             // 
             // TxtPrecioUnitario
             // 
             this.TxtPrecioUnitario.Location = new System.Drawing.Point(206, 140);
             this.TxtPrecioUnitario.Name = "TxtPrecioUnitario";
-            this.TxtPrecioUnitario.Size = new System.Drawing.Size(222, 22);
+            this.TxtPrecioUnitario.Size = new System.Drawing.Size(285, 22);
             this.TxtPrecioUnitario.TabIndex = 39;
             // 
             // label5
@@ -142,7 +144,7 @@
             // 
             this.TxtProductoId.Location = new System.Drawing.Point(206, 265);
             this.TxtProductoId.Name = "TxtProductoId";
-            this.TxtProductoId.Size = new System.Drawing.Size(222, 22);
+            this.TxtProductoId.Size = new System.Drawing.Size(285, 22);
             this.TxtProductoId.TabIndex = 47;
             // 
             // label6
@@ -158,7 +160,7 @@
             // 
             this.TxtIngresoEgresoId.Location = new System.Drawing.Point(206, 302);
             this.TxtIngresoEgresoId.Name = "TxtIngresoEgresoId";
-            this.TxtIngresoEgresoId.Size = new System.Drawing.Size(222, 22);
+            this.TxtIngresoEgresoId.Size = new System.Drawing.Size(285, 22);
             this.TxtIngresoEgresoId.TabIndex = 49;
             // 
             // label7
@@ -170,11 +172,22 @@
             this.label7.TabIndex = 48;
             this.label7.Text = "IngresoEgresoId: ";
             // 
+            // DgvDetalleIngresoEgreso
+            // 
+            this.DgvDetalleIngresoEgreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDetalleIngresoEgreso.Location = new System.Drawing.Point(40, 363);
+            this.DgvDetalleIngresoEgreso.Name = "DgvDetalleIngresoEgreso";
+            this.DgvDetalleIngresoEgreso.RowHeadersWidth = 51;
+            this.DgvDetalleIngresoEgreso.RowTemplate.Height = 24;
+            this.DgvDetalleIngresoEgreso.Size = new System.Drawing.Size(684, 227);
+            this.DgvDetalleIngresoEgreso.TabIndex = 50;
+            // 
             // FrmDetalleIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 434);
+            this.ClientSize = new System.Drawing.Size(760, 639);
+            this.Controls.Add(this.DgvDetalleIngresoEgreso);
             this.Controls.Add(this.TxtIngresoEgresoId);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TxtProductoId);
@@ -192,6 +205,8 @@
             this.Controls.Add(this.label2);
             this.Name = "FrmDetalleIngreso";
             this.Text = ".: Detalle Ingreso Egreso :.";
+            this.Load += new System.EventHandler(this.FrmDetalleIngreso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDetalleIngresoEgreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +229,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxtIngresoEgresoId;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView DgvDetalleIngresoEgreso;
     }
 }

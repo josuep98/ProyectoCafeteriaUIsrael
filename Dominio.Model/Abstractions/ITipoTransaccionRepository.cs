@@ -10,5 +10,6 @@ namespace Dominio.Model.Abstractions
     public interface ITipoTransaccionRepository : IBaseRepository<TipoTransaccion>
     {
         TipoTransaccion Buscar(int id);
+        IEnumerable<TipoTransaccion> ListarTipoTransaccionActiva();
     }
 }
