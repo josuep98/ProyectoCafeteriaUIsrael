@@ -29,6 +29,23 @@ namespace UI.Windows.AplicationController
             }
         }
 
+        public bool ModificarCategoria(CategoriaViewModel categoriaViewModel)
+        {
+            Categoria categoria = new Categoria();
+            try
+            {
+                categoria.CategoriaId = categoriaViewModel.CategoriaId;
+                categoria.Descripcion = categoriaViewModel.Descripcion;
+                categoria.Estado = categoriaViewModel.Estado;
+                categoriaServices.ModificarCategoria(categoria);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public IEnumerable<CategoriaViewModel> ListarCategoriasActivas()
         {
             //Obtener información de la BD

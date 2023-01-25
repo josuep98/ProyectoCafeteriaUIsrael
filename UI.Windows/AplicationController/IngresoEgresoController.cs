@@ -31,6 +31,25 @@ namespace UI.Windows.AplicationController
             }
         }
 
+        public bool ModificarIngresoEgreso(IngresoEgresoViewModel ingresoEgresoViewModel)
+        {
+            IngresoEgreso ingresoEgreso = new IngresoEgreso();
+            try
+            {
+                ingresoEgreso.IngresoEgresoId = ingresoEgresoViewModel.IngresoEgresoId;
+                ingresoEgreso.FechaHora = ingresoEgresoViewModel.FechaHora;
+                ingresoEgreso.Descripcion = ingresoEgresoViewModel.Descripcion;
+                ingresoEgreso.TipoTransaccionId = ingresoEgresoViewModel.TipoTransaccionId;
+                ingresoEgreso.Estado = ingresoEgresoViewModel.Estado;
+                ingresoEgresoServices.ModificarIngresoEgreso(ingresoEgreso);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public IEnumerable<IngresoEgresoViewModel> ListarIngresoEgresoActivo()
         {
             //Obtener información de la BD
@@ -51,5 +70,6 @@ namespace UI.Windows.AplicationController
             }
             return listaIngresoEgresoVM;
         }
+
     }
 }

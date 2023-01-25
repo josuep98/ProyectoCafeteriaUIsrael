@@ -29,7 +29,24 @@ namespace UI.Windows.AplicationController
             }
         }
 
-        public IEnumerable<TipoTransaccionViewModel> ListarIngresoEgresoActivo()
+        public bool ModificarTipoTransaccion(TipoTransaccionViewModel tipoTransaccionViewModel)
+        {
+            TipoTransaccion tipoTransaccion = new TipoTransaccion();
+            try
+            {
+                tipoTransaccion.TipoTransaccionId = tipoTransaccionViewModel.TipoTransaccionId;
+                tipoTransaccion.Descripcion = tipoTransaccionViewModel.Descripcion;
+                tipoTransaccion.Estado = tipoTransaccionViewModel.Estado;
+                tipoTransaccionServices.ModificarTipoTransaccion(tipoTransaccion);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public IEnumerable<TipoTransaccionViewModel> ListarTipoTransaccion()
         {
             //Obtener información de la BD
             var listaTipoTransaccion = tipoTransaccionServices.ListarTipoTransaccionActiva();

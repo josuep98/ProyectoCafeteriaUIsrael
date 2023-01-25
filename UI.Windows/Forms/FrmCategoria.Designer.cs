@@ -34,6 +34,7 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnRegresar = new System.Windows.Forms.Button();
             this.DgvCategoria = new System.Windows.Forms.DataGridView();
+            this.TxtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,12 +93,22 @@
             this.DgvCategoria.RowTemplate.Height = 24;
             this.DgvCategoria.Size = new System.Drawing.Size(481, 150);
             this.DgvCategoria.TabIndex = 13;
+            this.DgvCategoria.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvCategoria_CellMouseDoubleClick);
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(66, 48);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(0, 22);
+            this.TxtId.TabIndex = 14;
+            this.TxtId.Visible = false;
             // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 398);
+            this.Controls.Add(this.TxtId);
             this.Controls.Add(this.DgvCategoria);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.BtnGuardar);
@@ -121,5 +132,6 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnRegresar;
         private System.Windows.Forms.DataGridView DgvCategoria;
+        private System.Windows.Forms.TextBox TxtId;
     }
 }

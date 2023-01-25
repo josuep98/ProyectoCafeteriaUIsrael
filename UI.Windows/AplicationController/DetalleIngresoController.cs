@@ -33,6 +33,28 @@ namespace UI.Windows.AplicationController
             }
         }
 
+        public bool ModificarDetalleIngreso(DetalleIngresoViewModel detalleIngresoViewModel)
+        {
+            DetalleiIngreso detalleIngreso = new DetalleiIngreso();
+            try
+            {
+                detalleIngreso.DetalleIngresoId = detalleIngresoViewModel.DetalleIngresoId;
+                detalleIngreso.Cantidad = detalleIngresoViewModel.Cantidad;
+                detalleIngreso.PrecioUnitario = detalleIngresoViewModel.PrecioUnitario;
+                detalleIngreso.PrecioFinal = detalleIngresoViewModel.PrecioFinal;
+                detalleIngreso.Descripcion = detalleIngresoViewModel.Descripcion;
+                detalleIngreso.ProductoId = detalleIngresoViewModel.ProductoId;
+                detalleIngreso.IngresoEgresoId = detalleIngresoViewModel.IngresoEgresoId;
+                detalleIngreso.Estado = detalleIngresoViewModel.Estado;
+                detalleIngresoServices.ModificarDetalleiIngreso(detalleIngreso);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public IEnumerable<DetalleIngresoViewModel> ListarDetalleIngresoEgresoActivo()
         {
             //Obtener información de la BD

@@ -42,6 +42,7 @@
             this.TxtCategoriaId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.DgvProducto = new System.Windows.Forms.DataGridView();
+            this.TxtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,12 +164,22 @@
             this.DgvProducto.RowTemplate.Height = 24;
             this.DgvProducto.Size = new System.Drawing.Size(707, 207);
             this.DgvProducto.TabIndex = 37;
+            this.DgvProducto.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvProducto_CellMouseDoubleClick);
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(153, 72);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(0, 22);
+            this.TxtId.TabIndex = 38;
+            this.TxtId.Visible = false;
             // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 523);
+            this.Controls.Add(this.TxtId);
             this.Controls.Add(this.DgvProducto);
             this.Controls.Add(this.TxtCategoriaId);
             this.Controls.Add(this.label6);
@@ -208,5 +219,6 @@
         private System.Windows.Forms.TextBox TxtCategoriaId;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView DgvProducto;
+        private System.Windows.Forms.TextBox TxtId;
     }
 }

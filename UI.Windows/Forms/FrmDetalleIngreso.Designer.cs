@@ -44,6 +44,7 @@
             this.TxtIngresoEgresoId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DgvDetalleIngresoEgreso = new System.Windows.Forms.DataGridView();
+            this.TxtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalleIngresoEgreso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,12 +182,22 @@
             this.DgvDetalleIngresoEgreso.RowTemplate.Height = 24;
             this.DgvDetalleIngresoEgreso.Size = new System.Drawing.Size(684, 227);
             this.DgvDetalleIngresoEgreso.TabIndex = 50;
+            this.DgvDetalleIngresoEgreso.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvDetalleIngresoEgreso_CellMouseDoubleClick);
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(124, 66);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(0, 22);
+            this.TxtId.TabIndex = 51;
+            this.TxtId.Visible = false;
             // 
             // FrmDetalleIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 639);
+            this.Controls.Add(this.TxtId);
             this.Controls.Add(this.DgvDetalleIngresoEgreso);
             this.Controls.Add(this.TxtIngresoEgresoId);
             this.Controls.Add(this.label7);
@@ -230,5 +241,6 @@
         private System.Windows.Forms.TextBox TxtIngresoEgresoId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView DgvDetalleIngresoEgreso;
+        private System.Windows.Forms.TextBox TxtId;
     }
 }

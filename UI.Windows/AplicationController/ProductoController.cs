@@ -33,6 +33,27 @@ namespace UI.Windows.AplicationController
             }
         }
 
+        public bool ModificarProducto(ProductoViewModel productoViewModel)
+        {
+            Producto producto = new Producto();
+            try
+            {
+                producto.ProductoId = productoViewModel.ProductoId;
+                producto.Nombre = productoViewModel.Nombre;
+                producto.Descripcion = productoViewModel.Descripcion;
+                producto.Stock = productoViewModel.Stock;
+                producto.Pvp = productoViewModel.Pvp;
+                producto.CategoriaId = productoViewModel.CategoriaId;
+                producto.Estado = productoViewModel.Estado;
+                productoServices.ModificarProducto(producto);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public IEnumerable<ProductoViewModel> ListarProductoActivo()
         {
             //Obtener información de la BD

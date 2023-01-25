@@ -34,6 +34,7 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.DgvTipoTransaccion = new System.Windows.Forms.DataGridView();
+            this.TxtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTipoTransaccion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,12 +92,22 @@
             this.DgvTipoTransaccion.RowTemplate.Height = 24;
             this.DgvTipoTransaccion.Size = new System.Drawing.Size(509, 162);
             this.DgvTipoTransaccion.TabIndex = 24;
+            this.DgvTipoTransaccion.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvTipoTransaccion_CellMouseDoubleClick);
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(130, 50);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(0, 22);
+            this.TxtId.TabIndex = 25;
+            this.TxtId.Visible = false;
             // 
             // FrmTipoTransaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 377);
+            this.Controls.Add(this.TxtId);
             this.Controls.Add(this.DgvTipoTransaccion);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnGuardar);
@@ -119,5 +130,6 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.DataGridView DgvTipoTransaccion;
+        private System.Windows.Forms.TextBox TxtId;
     }
 }

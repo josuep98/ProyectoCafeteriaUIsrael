@@ -28,15 +28,26 @@ namespace UI.Windows.Forms
             if (tipoTransaccionController.InsertarTipoTransaccion(tipoTransaccionViewModel))
             {
                 MessageBox.Show("Tipo de transacción insertada correctamente!");
-                ListarIngresoEgresoActivo();
+                ListarTipoTransaccion();
             }
             else
                 MessageBox.Show("ERROR! No se pudo insertar el tipo de transacción");
         }
 
-        private void ListarIngresoEgresoActivo()
+        private void Actualizar()
         {
-            DgvTipoTransaccion.DataSource = tipoTransaccionController.ListarIngresoEgresoActivo();
+            if (tipoTransaccionController.ModificarTipoTransaccion(tipoTransaccionViewModel))
+            {
+                MessageBox.Show("Tipo de Transacció actualizada correctamente!");
+                ListarTipoTransaccion();
+            }
+            else
+                MessageBox.Show("ERROR! No se pudo actualizar el tipo de Transacció");
+        }
+
+        private void ListarTipoTransaccion()
+        {
+            DgvTipoTransaccion.DataSource = tipoTransaccionController.ListarTipoTransaccion();
         }
 
 
@@ -45,7 +56,14 @@ namespace UI.Windows.Forms
             tipoTransaccionViewModel = new TipoTransaccionViewModel();
             tipoTransaccionViewModel.Descripcion = TxtDescripcion.Text;
             tipoTransaccionViewModel.Estado = 1;
-            Insertar();
+
+            if (string.IsNullOrEmpty(TxtId.Text))
+                Insertar();
+            else
+            {
+                tipoTransaccionViewModel.TipoTransaccionId = Convert.ToInt32(TxtId.Text);
+                Actualizar();
+            }
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -56,7 +74,17 @@ namespace UI.Windows.Forms
 
         private void FrmTipoTransaccion_Load(object sender, EventArgs e)
         {
-            ListarIngresoEgresoActivo();
+            ListarTipoTransaccion();
+        }
+
+        private void DgvTipoTransaccion_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DgvTipoTransaccion.SelectedRows.Count > 0)
+            {
+                TxtId.Text = DgvTipoTransaccion.CurrentRow.Cells[0].Value.ToString();
+                TxtDescripcion.Text = DgvTipoTransaccion.CurrentRow.Cells[1].Value.ToString();
+                BtnGuardar.Text = "Actualizar";
+            }
         }
     }
 }

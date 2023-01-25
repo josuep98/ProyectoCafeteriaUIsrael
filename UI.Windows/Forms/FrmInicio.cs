@@ -25,7 +25,7 @@ namespace UI.Windows.Forms
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            FrmTipoTransaccion frmtipoTransaccion = new FrmTipoTransaccion();
+            FrmDetalleIngreso frmtipoTransaccion = new FrmDetalleIngreso();
             frmtipoTransaccion.Show();
         }
 
@@ -37,14 +37,14 @@ namespace UI.Windows.Forms
 
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
-            FrmIngresoEgreso frmIngresoEgreso = new FrmIngresoEgreso();
-            frmIngresoEgreso.Show();
+            FrmTipoTransaccion frmTipoTransaccion = new FrmTipoTransaccion();
+            frmTipoTransaccion.Show();
         }
 
         private void toolStripLabel5_Click(object sender, EventArgs e)
         {
-            FrmDetalleIngreso frmDetalleIngreso = new FrmDetalleIngreso();
-            frmDetalleIngreso.Show();
+            FrmIngresoEgreso frmIngresoEgreso = new FrmIngresoEgreso();
+            frmIngresoEgreso.Show();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

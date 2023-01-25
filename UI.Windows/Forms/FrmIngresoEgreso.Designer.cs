@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DtpFechaHora = new System.Windows.Forms.DateTimePicker();
             this.DgvIngresoEgreso = new System.Windows.Forms.DataGridView();
+            this.TxtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvIngresoEgreso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,12 +128,22 @@
             this.DgvIngresoEgreso.RowTemplate.Height = 24;
             this.DgvIngresoEgreso.Size = new System.Drawing.Size(532, 150);
             this.DgvIngresoEgreso.TabIndex = 27;
+            this.DgvIngresoEgreso.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvIngresoEgreso_CellMouseDoubleClick);
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(162, 51);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(0, 22);
+            this.TxtId.TabIndex = 28;
+            this.TxtId.Visible = false;
             // 
             // FrmIngresoEgreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 406);
+            this.Controls.Add(this.TxtId);
             this.Controls.Add(this.DgvIngresoEgreso);
             this.Controls.Add(this.DtpFechaHora);
             this.Controls.Add(this.BtnRegresar);
@@ -164,5 +175,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DtpFechaHora;
         private System.Windows.Forms.DataGridView DgvIngresoEgreso;
+        private System.Windows.Forms.TextBox TxtId;
     }
 }

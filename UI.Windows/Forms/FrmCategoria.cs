@@ -34,6 +34,17 @@ namespace UI.Windows.Forms
                 MessageBox.Show("ERROR! No se pudo insertar la categoria");
         }
 
+        private void Actualizar()
+        {
+            if (categoriaController.ModificarCategoria(categoriaViewModel))
+            {
+                MessageBox.Show("Categoria actualizada correctamente!");
+                ListarCategoriasActivas();
+            }
+            else
+                MessageBox.Show("ERROR! No se pudo actualizar la categoria");
+        }
+
         private void ListarCategoriasActivas()
         {
             DgvCategoria.DataSource = categoriaController.ListarCategoriasActivas();
@@ -44,8 +55,17 @@ namespace UI.Windows.Forms
             categoriaViewModel = new CategoriaViewModel();
             categoriaViewModel.Descripcion = TxtDescripcion.Text;
             categoriaViewModel.Estado = 1;
-            Insertar();
+
+            if (string.IsNullOrEmpty(TxtId.Text))
+                Insertar();
+            else
+            {
+                categoriaViewModel.CategoriaId = Convert.ToInt32(TxtId.Text);
+                Actualizar();
+            }
         }
+
+
 
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
@@ -55,6 +75,16 @@ namespace UI.Windows.Forms
         private void FrmCategoria_Load(object sender, EventArgs e)
         {
             ListarCategoriasActivas();
+        }
+
+        private void DgvCategoria_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DgvCategoria.SelectedRows.Count > 0)
+            {
+                TxtId.Text = DgvCategoria.CurrentRow.Cells[0].Value.ToString();
+                TxtDescripcion.Text = DgvCategoria.CurrentRow.Cells[1].Value.ToString();
+                BtnGuardar.Text = "Actualizar";
+            }
         }
     }
 }
