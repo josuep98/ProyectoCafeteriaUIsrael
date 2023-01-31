@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace UI.Windows.Forms
 {
-    public partial class Contenedor : Form
+    public partial class FrmContenedor : Form
     {
-        public Contenedor()
+        public FrmContenedor()
         {
             InitializeComponent();
         }
@@ -65,6 +65,42 @@ namespace UI.Windows.Forms
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void AbrirFormInPanel(object FormHijo)
+        {
+            if (this.PnContenedor.Controls.Count > 0)
+                this.PnContenedor.Controls.RemoveAt(0);
+            Form fh = FormHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PnContenedor.Controls.Add(fh);
+            this.PnContenedor.Tag = fh;
+            fh.Show();
+        }
+        private void MnCategoria_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmCategoria());
+        }
+
+        private void MnTipoTransaccion_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmTipoTransaccion());
+        }
+
+        private void MnIngresoEgreso_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmIngresoEgreso());
+        }
+
+        private void MnProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmProducto());
+        }
+
+        private void BtnDetalleIngresoEgreso_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmDetalleIngreso());
         }
     }
 }

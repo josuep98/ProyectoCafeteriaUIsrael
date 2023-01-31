@@ -61,11 +61,11 @@
     <Compile Include="AplicationController\IngresoEgresoController.cs" />
     <Compile Include="AplicationController\ProductoController.cs" />
     <Compile Include="AplicationController\TipoTransaccionController.cs" />
-    <Compile Include="Forms\Contenedor.cs">
+    <Compile Include="Forms\FrmContenedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Contenedor.Designer.cs">
-      <DependentUpon>Contenedor.cs</DependentUpon>
+    <Compile Include="Forms\FrmContenedor.Designer.cs">
+      <DependentUpon>FrmContenedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmCategoria.cs">
       <SubType>Form</SubType>
@@ -78,12 +78,6 @@
     </Compile>
     <Compile Include="Forms\FrmDetalleIngreso.Designer.cs">
       <DependentUpon>FrmDetalleIngreso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmInicio.Designer.cs">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmIngresoEgreso.cs">
       <SubType>Form</SubType>
@@ -110,17 +104,14 @@
     <Compile Include="ViewModel\IngresoEgresoViewModel.cs" />
     <Compile Include="ViewModel\ProductoViewModel.cs" />
     <Compile Include="ViewModel\TipoTransaccionViewModel.cs" />
-    <EmbeddedResource Include="Forms\Contenedor.resx">
-      <DependentUpon>Contenedor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmContenedor.resx">
+      <DependentUpon>FrmContenedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetalleIngreso.resx">
       <DependentUpon>FrmDetalleIngreso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmInicio.resx">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmIngresoEgreso.resx">
       <DependentUpon>FrmIngresoEgreso.cs</DependentUpon>

@@ -17,6 +17,7 @@ namespace UI.Windows.Forms
     {
         private IngresoEgresoController ingresoEgresoController;
         private IngresoEgresoViewModel ingresoEgresoViewModel;
+        public int Id;
         public FrmIngresoEgreso()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace UI.Windows.Forms
             ingresoEgresoViewModel = new IngresoEgresoViewModel();
             ingresoEgresoViewModel.FechaHora = DtpFechaHora.Value;
             ingresoEgresoViewModel.Descripcion = TxtDescripcion.Text;
-            ingresoEgresoViewModel.TipoTransaccionId = Convert.ToInt32(TxtTipoTransaccionId);
+            ingresoEgresoViewModel.TipoTransaccionId = Convert.ToInt32(TxtTipoTransaccionId.Text);
             ingresoEgresoViewModel.Estado = 1;
 
             if (string.IsNullOrEmpty(TxtId.Text))
@@ -88,5 +89,6 @@ namespace UI.Windows.Forms
                 BtnGuardar.Text = "Actualizar";
             }
         }
+
     }
 }
