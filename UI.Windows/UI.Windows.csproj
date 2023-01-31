@@ -61,6 +61,12 @@
     <Compile Include="AplicationController\IngresoEgresoController.cs" />
     <Compile Include="AplicationController\ProductoController.cs" />
     <Compile Include="AplicationController\TipoTransaccionController.cs" />
+    <Compile Include="Forms\Contenedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contenedor.Designer.cs">
+      <DependentUpon>Contenedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="ViewModel\IngresoEgresoViewModel.cs" />
     <Compile Include="ViewModel\ProductoViewModel.cs" />
     <Compile Include="ViewModel\TipoTransaccionViewModel.cs" />
+    <EmbeddedResource Include="Forms\Contenedor.resx">
+      <DependentUpon>Contenedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
