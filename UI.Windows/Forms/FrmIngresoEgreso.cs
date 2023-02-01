@@ -17,11 +17,12 @@ namespace UI.Windows.Forms
     {
         private IngresoEgresoController ingresoEgresoController;
         private IngresoEgresoViewModel ingresoEgresoViewModel;
-        public int Id;
+        private TipoTransaccionController transaccionController;
         public FrmIngresoEgreso()
         {
             InitializeComponent();
             ingresoEgresoController = new IngresoEgresoController();
+            transaccionController = new TipoTransaccionController();
         }
 
         private void Insertar()
@@ -46,9 +47,34 @@ namespace UI.Windows.Forms
                 MessageBox.Show("ERROR! No se pudo actualizar el ingreso/egreso");
         }
 
+        private void Eliminar()
+        {
+            int id = 0;
+            if (!string.IsNullOrEmpty(TxtId.Text))
+            {
+                id = Convert.ToInt32(TxtId.Text);
+                if (ingresoEgresoController.Eliminar(id))
+                {
+                    MessageBox.Show("Ingreso/Egreso eliminado correctamente!");
+                    ListarIngresoEgresoActivo();
+                }
+                else
+                    MessageBox.Show("ERROR! No se pudo eliminar la cabecera");
+            }
+            else
+                MessageBox.Show("ERROR! No se pudo eliminar, seleccione una fila");
+        }
+
         private void ListarIngresoEgresoActivo()
         {
             DgvIngresoEgreso.DataSource = ingresoEgresoController.ListarIngresoEgresoActivo();
+        }
+
+        private void ListarCombo()
+        {
+            CbTipoTransaccion.DataSource = transaccionController.ListarTipoTransaccion();
+            CbTipoTransaccion.ValueMember = "TipoTransaccionId";
+            CbTipoTransaccion.DisplayMember = "Descripcion";
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -56,7 +82,7 @@ namespace UI.Windows.Forms
             ingresoEgresoViewModel = new IngresoEgresoViewModel();
             ingresoEgresoViewModel.FechaHora = DtpFechaHora.Value;
             ingresoEgresoViewModel.Descripcion = TxtDescripcion.Text;
-            ingresoEgresoViewModel.TipoTransaccionId = Convert.ToInt32(TxtTipoTransaccionId.Text);
+            ingresoEgresoViewModel.TipoTransaccionId = Convert.ToInt32(CbTipoTransaccion.SelectedValue);
             ingresoEgresoViewModel.Estado = 1;
 
             if (string.IsNullOrEmpty(TxtId.Text))
@@ -76,6 +102,7 @@ namespace UI.Windows.Forms
         private void FrmIngresoEgreso_Load(object sender, EventArgs e)
         {
             ListarIngresoEgresoActivo();
+            ListarCombo();
         }
 
         private void DgvIngresoEgreso_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -85,10 +112,20 @@ namespace UI.Windows.Forms
                 TxtId.Text = DgvIngresoEgreso.CurrentRow.Cells[0].Value.ToString();
                 DtpFechaHora.Value = Convert.ToDateTime(DgvIngresoEgreso.CurrentRow.Cells[1].Value.ToString());
                 TxtDescripcion.Text = DgvIngresoEgreso.CurrentRow.Cells[2].Value.ToString();
-                TxtTipoTransaccionId.Text = DgvIngresoEgreso.CurrentRow.Cells[3].Value.ToString();
+                CbTipoTransaccion.SelectedValue = DgvIngresoEgreso.CurrentRow.Cells[3].Value;
                 BtnGuardar.Text = "Actualizar";
             }
         }
 
+        private void DgvIngresoEgreso_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DgvIngresoEgreso.SelectedRows.Count > 0)
+                TxtId.Text = DgvIngresoEgreso.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
     }
 }

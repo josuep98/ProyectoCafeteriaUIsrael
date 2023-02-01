@@ -1,4 +1,5 @@
 ﻿using Aplication.ServicesEntity;
+using Dominio.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,9 +18,14 @@ namespace UI.Windows.Forms
     {
         DetalleIngresoController detalleIngresoController;
         DetalleIngresoViewModel detalleIngresoViewModel;
+        ProductoController productoController;
+        IngresoEgresoController ingresoEgresoController;
+
         public FrmDetalleIngreso()
         {
             detalleIngresoController = new DetalleIngresoController();
+            productoController = new ProductoController();
+            ingresoEgresoController = new IngresoEgresoController();
             InitializeComponent();
         }
 
@@ -45,6 +51,37 @@ namespace UI.Windows.Forms
                 MessageBox.Show("ERROR! No se pudo actualizar el detalle del ingreso/egreso");
         }
 
+        private void Eliminar()
+        {
+            int id = 0;
+            if (!string.IsNullOrEmpty(TxtId.Text))
+            {
+                id = Convert.ToInt32(TxtId.Text);
+                if (detalleIngresoController.Eliminar(id))
+                {
+                    MessageBox.Show("Detalle eliminado correctamente!");
+                    ListarDetalleIngresoEgresoActivo();
+                }
+                else
+                    MessageBox.Show("ERROR! No se pudo eliminar el detalle");
+            }
+            else
+                MessageBox.Show("ERROR! No se pudo eliminar, seleccione una fila");
+        }
+
+        private void ListarCombos()
+        {
+            //Combo Producto
+            CbProducto.DataSource = productoController.ListarProductoActivo();
+            CbProducto.ValueMember = "ProductoId";
+            CbProducto.DisplayMember = "Nombre";
+            //Combo Tipo de transacción
+            CbIngresoEgreso.DataSource = ingresoEgresoController.ListarIngresoEgresoActivo();
+            CbIngresoEgreso.ValueMember = "IngresoEgresoId";
+            CbIngresoEgreso.DisplayMember = "Descripcion";
+
+        }
+
         private void ListarDetalleIngresoEgresoActivo()
         {
             DgvDetalleIngresoEgreso.DataSource = detalleIngresoController.ListarDetalleIngresoEgresoActivo();
@@ -57,8 +94,8 @@ namespace UI.Windows.Forms
             detalleIngresoViewModel.PrecioUnitario = Convert.ToDecimal(TxtPrecioUnitario.Text);
             detalleIngresoViewModel.PrecioFinal = Convert.ToDecimal(TxtPrecioFinal.Text);
             detalleIngresoViewModel.Descripcion = TxtDescripcion.Text;
-            detalleIngresoViewModel.ProductoId = Convert.ToInt32(TxtPrecioFinal.Text);
-            detalleIngresoViewModel.IngresoEgresoId = Convert.ToInt32(TxtIngresoEgresoId.Text);
+            detalleIngresoViewModel.ProductoId = Convert.ToInt32(CbProducto.SelectedValue);
+            detalleIngresoViewModel.IngresoEgresoId = Convert.ToInt32(CbIngresoEgreso.SelectedValue);
             detalleIngresoViewModel.Estado = 1;
 
             if (string.IsNullOrEmpty(TxtId.Text))
@@ -78,6 +115,7 @@ namespace UI.Windows.Forms
         private void FrmDetalleIngreso_Load(object sender, EventArgs e)
         {
             ListarDetalleIngresoEgresoActivo();
+            ListarCombos();
         }
 
         private void DgvDetalleIngresoEgreso_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -89,10 +127,21 @@ namespace UI.Windows.Forms
                 TxtPrecioUnitario.Text = DgvDetalleIngresoEgreso.CurrentRow.Cells[2].Value.ToString();
                 TxtPrecioFinal.Text = DgvDetalleIngresoEgreso.CurrentRow.Cells[3].Value.ToString();
                 TxtDescripcion.Text = DgvDetalleIngresoEgreso.CurrentRow.Cells[4].Value.ToString();
-                TxtProductoId.Text = DgvDetalleIngresoEgreso.CurrentRow.Cells[5].Value.ToString();
-                TxtIngresoEgresoId.Text = DgvDetalleIngresoEgreso.CurrentRow.Cells[6].Value.ToString();
+                CbProducto.SelectedValue = DgvDetalleIngresoEgreso.CurrentRow.Cells[5].Value;
+                CbIngresoEgreso.SelectedValue = DgvDetalleIngresoEgreso.CurrentRow.Cells[6].Value;
                 BtnGuardar.Text = "Actualizar";
             }
+        }
+
+        private void DgvDetalleIngresoEgreso_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DgvDetalleIngresoEgreso.SelectedRows.Count > 0)
+                TxtId.Text = DgvDetalleIngresoEgreso.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
         }
     }
 }

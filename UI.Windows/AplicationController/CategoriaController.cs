@@ -65,5 +65,18 @@ namespace UI.Windows.AplicationController
             return listaCategoriasVM;
         }
 
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                categoriaServices.EliminarCategoria(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

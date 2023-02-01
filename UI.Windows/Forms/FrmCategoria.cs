@@ -65,7 +65,23 @@ namespace UI.Windows.Forms
             }
         }
 
-
+        private void Eliminar()
+        {
+            int id = 0;
+            if (!string.IsNullOrEmpty(TxtId.Text))
+            {
+                id = Convert.ToInt32(TxtId.Text);
+                if (categoriaController.Eliminar(id))
+                {
+                    MessageBox.Show("Categoria eliminada correctamente!");
+                    ListarCategoriasActivas();
+                }
+                else
+                    MessageBox.Show("ERROR! No se pudo eliminar la categoria");
+            }
+            else
+                MessageBox.Show("ERROR! No se pudo eliminar, seleccione una fila");
+        }
 
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
@@ -85,6 +101,17 @@ namespace UI.Windows.Forms
                 TxtDescripcion.Text = DgvCategoria.CurrentRow.Cells[1].Value.ToString();
                 BtnGuardar.Text = "Actualizar";
             }
+        }
+
+        private void DgvCategoria_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DgvCategoria.SelectedRows.Count > 0)
+                TxtId.Text = DgvCategoria.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
         }
     }
 }

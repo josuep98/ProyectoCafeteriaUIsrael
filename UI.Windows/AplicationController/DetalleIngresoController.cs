@@ -78,5 +78,18 @@ namespace UI.Windows.AplicationController
             }
             return listaDetalleIngresoVM;
         }
+
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                detalleIngresoServices.EliminarDetalleiIngreso(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

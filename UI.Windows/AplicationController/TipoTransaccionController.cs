@@ -64,5 +64,18 @@ namespace UI.Windows.AplicationController
             }
             return listaTipoTransaccionVM;
         }
+
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                tipoTransaccionServices.EliminarTipoTransaccion(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

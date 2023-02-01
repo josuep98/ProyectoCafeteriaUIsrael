@@ -17,10 +17,12 @@ namespace UI.Windows.Forms
     {
         private ProductoController productoController;
         private ProductoViewModel productoViewModel;
+        private CategoriaController categoriaController;
         public FrmProducto()
         {
             InitializeComponent();
             productoController = new ProductoController();
+            categoriaController = new CategoriaController();
         }
 
         private void Insertar()
@@ -45,9 +47,34 @@ namespace UI.Windows.Forms
                 MessageBox.Show("ERROR! No se pudo modificador el producto");
         }
 
+        private void Eliminar()
+        {
+            int id = 0;
+            if (!string.IsNullOrEmpty(TxtId.Text))
+            {
+                id = Convert.ToInt32(TxtId.Text);
+                if (productoController.Eliminar(id))
+                {
+                    MessageBox.Show("Producto eliminado correctamente!");
+                    ListarProductoActivo();
+                }
+                else
+                    MessageBox.Show("ERROR! No se pudo eliminar el producto");
+            }
+            else
+                MessageBox.Show("ERROR! No se pudo eliminar, seleccione una fila");
+        }
+
         private void ListarProductoActivo()
         {
             DgvProducto.DataSource = productoController.ListarProductoActivo();
+        }
+
+        private void ListarCombo()
+        {
+            CbCategoria.DataSource = categoriaController.ListarCategoriasActivas();
+            CbCategoria.ValueMember = "CategoriaId";
+            CbCategoria.DisplayMember = "Descripcion";
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -57,7 +84,7 @@ namespace UI.Windows.Forms
             productoViewModel.Descripcion = TxtDescripcion.Text;
             productoViewModel.Stock = Convert.ToInt32(TxtStock.Text);
             productoViewModel.Pvp = Convert.ToDecimal(TxtPvp.Text);
-            productoViewModel.CategoriaId = Convert.ToInt32(TxtCategoriaId.Text);
+            productoViewModel.CategoriaId = Convert.ToInt32(CbCategoria.SelectedValue);
             productoViewModel.Estado = 1;
 
             if (string.IsNullOrEmpty(TxtId.Text))
@@ -77,6 +104,7 @@ namespace UI.Windows.Forms
         private void FrmProducto_Load(object sender, EventArgs e)
         {
             ListarProductoActivo();
+            ListarCombo();
         }
 
         private void DgvProducto_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -88,9 +116,21 @@ namespace UI.Windows.Forms
                 TxtDescripcion.Text = DgvProducto.CurrentRow.Cells[2].Value.ToString();
                 TxtStock.Text = DgvProducto.CurrentRow.Cells[3].Value.ToString();
                 TxtPvp.Text = DgvProducto.CurrentRow.Cells[4].Value.ToString();
-                TxtCategoriaId.Text = DgvProducto.CurrentRow.Cells[5].Value.ToString();
+                CbCategoria.SelectedValue = DgvProducto.CurrentRow.Cells[5].Value;
                 BtnGuardar.Text = "Actualizar";
             }
         }
+
+        private void DgvProducto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DgvProducto.SelectedRows.Count > 0)
+                TxtId.Text = DgvProducto.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
     }
 }

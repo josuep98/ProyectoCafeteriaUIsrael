@@ -45,6 +45,24 @@ namespace UI.Windows.Forms
                 MessageBox.Show("ERROR! No se pudo actualizar el tipo de Transacció");
         }
 
+        private void Eliminar()
+        {
+            int id = 0;
+            if (!string.IsNullOrEmpty(TxtId.Text))
+            {
+                id = Convert.ToInt32(TxtId.Text);
+                if (tipoTransaccionController.Eliminar(id))
+                {
+                    MessageBox.Show("Tipo de transacción eliminada correctamente!");
+                    ListarTipoTransaccion();
+                }
+                else
+                    MessageBox.Show("ERROR! No se pudo eliminar el tipo de transacción");
+            }
+            else
+                MessageBox.Show("ERROR! No se pudo eliminar, seleccione ");
+        }
+
         private void ListarTipoTransaccion()
         {
             DgvTipoTransaccion.DataSource = tipoTransaccionController.ListarTipoTransaccion();
@@ -85,6 +103,17 @@ namespace UI.Windows.Forms
                 TxtDescripcion.Text = DgvTipoTransaccion.CurrentRow.Cells[1].Value.ToString();
                 BtnGuardar.Text = "Actualizar";
             }
+        }
+
+        private void DgvTipoTransaccion_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DgvTipoTransaccion.SelectedRows.Count > 0)
+                TxtId.Text = DgvTipoTransaccion.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
         }
     }
 }

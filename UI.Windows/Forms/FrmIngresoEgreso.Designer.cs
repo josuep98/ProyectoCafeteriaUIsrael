@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnRegresar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
-            this.TxtTipoTransaccionId = new System.Windows.Forms.TextBox();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +41,8 @@
             this.DtpFechaHora = new System.Windows.Forms.DateTimePicker();
             this.DgvIngresoEgreso = new System.Windows.Forms.DataGridView();
             this.TxtId = new System.Windows.Forms.TextBox();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.CbTipoTransaccion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvIngresoEgreso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRegresar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnRegresar.Location = new System.Drawing.Point(568, 134);
+            this.BtnRegresar.Location = new System.Drawing.Point(646, 125);
             this.BtnRegresar.Name = "BtnRegresar";
             this.BtnRegresar.Size = new System.Drawing.Size(119, 29);
             this.BtnRegresar.TabIndex = 25;
@@ -65,7 +66,7 @@
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGuardar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnGuardar.Location = new System.Drawing.Point(568, 89);
+            this.BtnGuardar.Location = new System.Drawing.Point(646, 80);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(119, 28);
             this.BtnGuardar.TabIndex = 24;
@@ -73,18 +74,10 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // TxtTipoTransaccionId
-            // 
-            this.TxtTipoTransaccionId.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTipoTransaccionId.Location = new System.Drawing.Point(232, 156);
-            this.TxtTipoTransaccionId.Name = "TxtTipoTransaccionId";
-            this.TxtTipoTransaccionId.Size = new System.Drawing.Size(222, 23);
-            this.TxtTipoTransaccionId.TabIndex = 21;
-            // 
             // TxtDescripcion
             // 
             this.TxtDescripcion.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescripcion.Location = new System.Drawing.Point(232, 120);
+            this.TxtDescripcion.Location = new System.Drawing.Point(310, 111);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(287, 23);
             this.TxtDescripcion.TabIndex = 20;
@@ -93,17 +86,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(49, 159);
+            this.label4.Location = new System.Drawing.Point(127, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 17);
+            this.label4.Size = new System.Drawing.Size(122, 17);
             this.label4.TabIndex = 16;
-            this.label4.Text = "TipoTransaccionId: ";
+            this.label4.Text = "Tipo Transaccion: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 123);
+            this.label3.Location = new System.Drawing.Point(166, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 15;
@@ -113,7 +106,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 87);
+            this.label2.Location = new System.Drawing.Point(169, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 14;
@@ -123,7 +116,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(243, 27);
+            this.label1.Location = new System.Drawing.Point(398, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 17);
             this.label1.TabIndex = 13;
@@ -132,7 +125,7 @@
             // DtpFechaHora
             // 
             this.DtpFechaHora.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaHora.Location = new System.Drawing.Point(232, 87);
+            this.DtpFechaHora.Location = new System.Drawing.Point(310, 78);
             this.DtpFechaHora.Name = "DtpFechaHora";
             this.DtpFechaHora.Size = new System.Drawing.Size(200, 23);
             this.DtpFechaHora.TabIndex = 26;
@@ -141,59 +134,84 @@
             // 
             this.DgvIngresoEgreso.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DgvIngresoEgreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvIngresoEgreso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvIngresoEgreso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.DgvIngresoEgreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvIngresoEgreso.DefaultCellStyle = dataGridViewCellStyle8;
-            this.DgvIngresoEgreso.Location = new System.Drawing.Point(52, 254);
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvIngresoEgreso.DefaultCellStyle = dataGridViewCellStyle11;
+            this.DgvIngresoEgreso.Location = new System.Drawing.Point(130, 245);
             this.DgvIngresoEgreso.Name = "DgvIngresoEgreso";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvIngresoEgreso.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvIngresoEgreso.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DgvIngresoEgreso.RowHeadersWidth = 51;
             this.DgvIngresoEgreso.RowTemplate.Height = 24;
             this.DgvIngresoEgreso.Size = new System.Drawing.Size(632, 176);
             this.DgvIngresoEgreso.TabIndex = 27;
+            this.DgvIngresoEgreso.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvIngresoEgreso_CellMouseClick);
             this.DgvIngresoEgreso.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvIngresoEgreso_CellMouseDoubleClick);
             // 
             // TxtId
             // 
             this.TxtId.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtId.Location = new System.Drawing.Point(148, 51);
+            this.TxtId.Location = new System.Drawing.Point(226, 42);
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(0, 23);
             this.TxtId.TabIndex = 28;
             this.TxtId.Visible = false;
             // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnEliminar.Location = new System.Drawing.Point(643, 169);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(119, 29);
+            this.BtnEliminar.TabIndex = 29;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // CbTipoTransaccion
+            // 
+            this.CbTipoTransaccion.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbTipoTransaccion.FormattingEnabled = true;
+            this.CbTipoTransaccion.Location = new System.Drawing.Point(310, 147);
+            this.CbTipoTransaccion.Name = "CbTipoTransaccion";
+            this.CbTipoTransaccion.Size = new System.Drawing.Size(200, 25);
+            this.CbTipoTransaccion.TabIndex = 30;
+            // 
             // FrmIngresoEgreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 472);
+            this.ClientSize = new System.Drawing.Size(925, 472);
+            this.Controls.Add(this.CbTipoTransaccion);
+            this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.TxtId);
             this.Controls.Add(this.DgvIngresoEgreso);
             this.Controls.Add(this.DtpFechaHora);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.TxtTipoTransaccionId);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -213,7 +231,6 @@
 
         private System.Windows.Forms.Button BtnRegresar;
         private System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.TextBox TxtTipoTransaccionId;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -222,5 +239,7 @@
         private System.Windows.Forms.DateTimePicker DtpFechaHora;
         private System.Windows.Forms.DataGridView DgvIngresoEgreso;
         private System.Windows.Forms.TextBox TxtId;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.ComboBox CbTipoTransaccion;
     }
 }

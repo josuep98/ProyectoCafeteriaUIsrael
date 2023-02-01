@@ -76,6 +76,17 @@ namespace UI.Windows.AplicationController
             }
             return listaProductoVM;
         }
-
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                productoServices.EliminarProducto(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
